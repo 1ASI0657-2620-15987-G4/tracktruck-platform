@@ -1,0 +1,8 @@
+﻿[build]
+builder = "dockerfile"
+dockerfilePatch = "./Dockerfile"
+
+[deploy]
+startCommand = "dotnet ACME.CargoExpress.API.dll"
+restartPolicyType = "always"
+healthCheckPath = "/health"

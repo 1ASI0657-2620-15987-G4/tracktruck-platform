@@ -1,0 +1,22 @@
+namespace ACME.CargoExpress.API.IAM.Domain.Model.Commands;
+
+/**
+ * <summary>
+ *     The sign up command
+ * </summary>
+ * <remarks>
+ *     This command object includes the credentials, the phone and the role-specific
+ *     profile data needed to create a user together with its Client or Entrepreneur profile.
+ *     Role: false = CLIENT, true = ENTREPRENEUR
+ * </remarks>
+ */
+public record SignUpCommand(
+    string Username,
+    string Password,
+    string Phone,
+    bool Role,
+    string Name,
+    string? Dni,
+    DateTime? BirthDate,
+    string? Ruc,
+    string? Address);
