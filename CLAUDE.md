@@ -6,23 +6,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Build the solution
-dotnet build ACME.CargoExpress.API.sln
+dotnet build TrackTruck.Platform.API.sln
 
 # Run the API
-dotnet run --project ACME.CargoExpress.API/ACME.CargoExpress.API.csproj
+dotnet run --project TrackTruck.Platform.API/TrackTruck.Platform.API.csproj
 
 # Run unit tests
-dotnet test CargoExpress.UnitTests/CargoExpress.UnitTests.csproj
+dotnet test TrackTruck.UnitTests/TrackTruck.UnitTests.csproj
 
 # Run integration tests (SpecFlow/BDD)
-dotnet test CargoExpress.IntegrationTests/CargoExpress.IntegrationTests.csproj
+dotnet test TrackTruck.IntegrationTests/TrackTruck.IntegrationTests.csproj
 
 # Run a single test by name
-dotnet test CargoExpress.UnitTests/CargoExpress.UnitTests.csproj --filter "FullyQualifiedName~TestClassName.TestMethodName"
+dotnet test TrackTruck.UnitTests/TrackTruck.UnitTests.csproj --filter "FullyQualifiedName~TestClassName.TestMethodName"
 
 # Docker
-docker build -f Dockerfile -t cargoexpress-api .
-docker run -p 8080:8080 cargoexpress-api
+docker build -f Dockerfile -t tracktruck-api .
+docker run -p 8080:8080 tracktruck-api
 ```
 
 Swagger UI is available at `http://localhost:<port>/swagger` when running locally.
@@ -89,4 +89,4 @@ All repositories, command services, and query services are registered manually i
 
 ## Integration Tests
 
-Tests use SpecFlow (BDD) with SQLite in-memory database. Feature files are in `CargoExpress.IntegrationTests/Features/`. Step definitions bind to Gherkin scenarios for API-level testing.
+Tests use SpecFlow (BDD) with SQLite in-memory database. Feature files are in `TrackTruck.IntegrationTests/Features/`. Step definitions bind to Gherkin scenarios for API-level testing.
