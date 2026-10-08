@@ -1,0 +1,3 @@
+namespace TrackTruck.Platform.API.Registration.Interfaces.REST.Resources;
+
+public record AlertResource(int Id, string Title, string Type, string Description, DateTime Date, int TripId);
