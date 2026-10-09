@@ -1,0 +1,41 @@
+using TrackTruck.Platform.API.User.Domain.Model.Aggregates;
+using TrackTruck.Platform.API.Registration.Domain.Model.Aggregates;
+
+namespace TrackTruck.Platform.API.Registration.Domain.Model.Entities;
+
+public class Driver
+{
+    public Driver()
+    {
+        Name = string.Empty;
+        Dni = string.Empty;
+        License = string.Empty;
+        ContactNumber = string.Empty;
+        State = "AVAILABLE";
+        Entrepreneur = new Entrepreneur();
+        Trips = new List<Trip>();
+    }
+
+    public Driver(string name, string dni, string license, string contactNumber, int entrepreneurId, Entrepreneur entrepreneur)
+    {
+        Name = name;
+        Dni = dni;
+        License = license;
+        ContactNumber = contactNumber;
+        State = "AVAILABLE";
+        EntrepreneurId = entrepreneurId;
+        Entrepreneur = entrepreneur;
+        Trips = new List<Trip>();
+    }
+
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Dni { get; set; }
+    public string License { get; set; }
+    public string ContactNumber { get; set; }
+    public string State { get; set; }
+
+    public int EntrepreneurId { get; set; }
+    public Entrepreneur Entrepreneur { get; set; }
+    public ICollection<Trip> Trips { get; }
+}
